@@ -228,6 +228,15 @@ public class Main3Activity extends Activity implements Runnable
                             final String string=new String(rawBytes,"UTF-8");
 
                             Log.e("readdddddddd", string);
+
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    TextView diplay = (TextView) findViewById(R.id.display);
+                                    diplay.setText(string);
+                                }
+                            });
+
                             /*handler.post(new Runnable() {
                                 public void run()
                                 {
